@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PH Tube</title>
+    <!-- daisyUI cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- common color -->
+    <!-- <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        color1: '#252525',
+                        color: '#ff0000'
+                    }
+                }
+            }
+        }
+    </script> -->
+
+    <style>
+        .active{
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body class="container mx-auto mb-20">
+    <header class="mt-12 mb-8">
+        <nav class="flex justify-between items-center">
+            <!-- left -->
+            <img src="assets/Logo.png" alt="">
+
+            <!-- middle -->
+            <label class="input">
+                <svg class="h-[1em] opacity-50"  viewBox="0 0 24 24">
+                    <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                    </g>
+                </svg>
+                <input id="search-input" type="search" required placeholder="Search" />
+            </label>
+
+            <!-- right -->
+            <button class="btn bg-red-500 font-medium text-lg text-white rounded">Blog</button>
+        </nav>
+    </header>
+    <hr class="text-[#17171720]">
+
+    <!-- dynamic button -->
+    <nav id="category-container" class="mt-8 mb-10 flex justify-center items-center gap-6 text-[#25252570]">
+        <div>
+            <button id="btn-all" onclick="loadVideos()" class="btn btn-sm rounded py-2 px-5 font-medium hover:bg-red-500 hover:text-white border-none bg-[#25252515]">All</button>
+        </div>
+
+    </nav>
+
+    <!-- loader -->
+    <section id="loader" class="text-center py-10 hidden">
+        <span class="loading loading-dots loading-xl"></span>
+    </section>
+
+    <main id="video-container" class="grid grid-cols-4 gap-6">
+        <div class="col-span-full text-center flex flex-col justify-center items-center mt-20">
+            <img src="assets/Icon.png" alt="">
+            <h1 class="font-bold text-2xl text-[#171717] leading-10">Oops!! Sorry, There is no <br> content here</h1>
+        </div>
+    </main>
+
+    <section class="">
+        <!-- Open the modal using ID.showModal() method -->
+        <button class="btn hidden" onclick="videoDetails.showModal()">open modal</button>
+        <dialog id="videoDetails" class="modal">
+            <div class="modal-box">
+                <div id="details-container">
+
+                </div>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+    </section>
+
+
+    <script src="script/index.js"></script>
+</body>
+</html>

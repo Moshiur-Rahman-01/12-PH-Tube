@@ -29,8 +29,8 @@
     </style>
 </head>
 <body class="container mx-auto mb-20">
-    <header class="mt-12 mb-8">
-        <nav class="flex justify-between items-center">
+    <header class="mt-12 mb-8 max-sm:mx-3">
+        <nav class="flex gap-10 justify-between items-center">
             <!-- left -->
             <img src="assets/Logo.png" alt="">
 
@@ -46,7 +46,7 @@
             </label>
 
             <!-- right -->
-            <button class="btn bg-red-500 font-medium text-lg text-white rounded">Blog</button>
+            <button class="btn hidden sm:block bg-red-500 font-medium text-lg text-white rounded">Blog</button>
         </nav>
     </header>
     <hr class="text-[#17171720]">
@@ -64,7 +64,7 @@
         <span class="loading loading-dots loading-xl"></span>
     </section>
 
-    <main id="video-container" class="grid grid-cols-4 gap-6">
+    <main id="video-container" class="grid sm:grid-cols-4 gap-6 max-sm:mx-3">
         <div class="col-span-full text-center flex flex-col justify-center items-center mt-20">
             <img src="assets/Icon.png" alt="">
             <h1 class="font-bold text-2xl text-[#171717] leading-10">Oops!! Sorry, There is no <br> content here</h1>
